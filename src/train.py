@@ -38,7 +38,7 @@ def eda():
     ax.set_xticks(range(len(corr)),corr.columns,rotation=90,fontsize=6)
     ax.set_yticks(range(len(corr)),corr.columns,fontsize=6)
     fig.colorbar(im,ax=ax,label='Pearson correlation')
-    ax.set_title('Feature correlations â€” descriptive only')
+    ax.set_title('Feature correlations | descriptive only')
     save('feature_correlations.png')
     return audit
 
@@ -93,7 +93,7 @@ def run():
     top = imp.head(10).iloc[::-1]
     fig,ax = plt.subplots(figsize=(8,5))
     ax.barh(top.feature,top.mean_auc_decrease,xerr=top.sd_auc_decrease,color='#298c8c')
-    ax.set(xlabel='Validation ROC-AUC decrease (mean Â± SD)',title='Permutation importance | 20 repeats')
+    ax.set(xlabel='Validation ROC-AUC decrease (mean +/- SD)',title='Permutation importance | 20 repeats')
     save('permutation_importance.png')
     fig,ax = plt.subplots(figsize=(9,4))
     PartialDependenceDisplay.from_estimator(best,b,features=imp.feature.head(2).tolist(),ax=ax)

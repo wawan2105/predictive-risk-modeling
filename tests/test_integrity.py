@@ -23,5 +23,21 @@ class IntegrityTests(unittest.TestCase):
         self.assertEqual(m['f1'],1)
         self.assertEqual((m['tn'],m['fp'],m['fn'],m['tp']),(2,0,0,2))
         self.assertGreaterEqual(threshold(y,p),.05)
+    def test_snapshot_checksums(self):
+        import hashlib
+        import json
+        from src.preprocessing import ROOT
+        manifest=json.loads((ROOT/'data/snapshot_manifest.json').read_text())
+        for name,expected in manifest['sha256'].items():
+            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),expected)
+    def test_saved_metrics_match_heldout_predictions(self):
+        import json
+        import pandas as pd
+        from src.preprocessing import ROOT
+        result=json.loads((ROOT/'outputs/test_metrics.json').read_text())
+        predictions=pd.read_csv(ROOT/'outputs/tables/test_predictions.csv')
+        recalculated=evaluate(predictions.actual,predictions.probability,result['threshold'])
+        for key,value in recalculated.items():
+            self.assertAlmostEqual(value,result[key],places=10)
 if __name__ == '__main__':
     unittest.main()

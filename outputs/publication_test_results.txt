@@ -1,0 +1,10 @@
+test_disjoint_reproducible_splits (test_integrity.IntegrityTests.test_disjoint_reproducible_splits) ... ok
+test_evaluation (test_integrity.IntegrityTests.test_evaluation) ... ok
+test_missing_value_inference (test_integrity.IntegrityTests.test_missing_value_inference) ... ok
+test_saved_metrics_match_heldout_predictions (test_integrity.IntegrityTests.test_saved_metrics_match_heldout_predictions) ... ok
+test_snapshot_checksums (test_integrity.IntegrityTests.test_snapshot_checksums) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.230s
+
+OK

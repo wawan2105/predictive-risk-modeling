@@ -1,0 +1,13 @@
+{
+  "dataset": "Wisconsin Diagnostic Breast Cancer",
+  "provider": "UCI via scikit-learn",
+  "doi": "10.24432/C5DW2B",
+  "package_version": "1.6.1",
+  "target": "1=malignant, 0=benign",
+  "sha256": {
+    "data\\processed\\test.csv": "4002d20d84368e010df963e6a153bffc350a53625e5681cb8f4fdcdb80509eb0",
+    "data\\processed\\train.csv": "86be87c68d05665ef6f1f516d8de3eed86a5e7104526b683c55fc9ec01798de7",
+    "data\\processed\\validation.csv": "58f6c8f149e4e5d0385f91d116324af6780fe0bb712b641dc8db7c718f108c7e",
+    "data\\raw\\breast_cancer.csv": "c1ca37f24198f5d7b8f5d3c29b34fb304d2d38de4859bdcf68eea0a4e05669cc"
+  }
+}
