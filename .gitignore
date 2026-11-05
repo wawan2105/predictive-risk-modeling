@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+outputs/model.joblib
+
+# Local configuration and generated runtime artifacts
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+*.joblib
+*_embeddings_*.npz
+.cache/

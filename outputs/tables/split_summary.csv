@@ -1,0 +1,4 @@
+split,rows,malignant
+train,341,127
+validation,114,43
+test,114,42
